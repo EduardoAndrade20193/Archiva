@@ -16,6 +16,8 @@ namespace Archiva.Controllers
             _db = db;
         }
 
+              // -------------------------   Inicio (carga de tabla Licencias)   --------------------------------
+
         public IActionResult Index()
         {
             return View();
@@ -54,6 +56,7 @@ namespace Archiva.Controllers
             return Json(lista);
         }
 
+        // -------------------------   Inicio (Formulario InserciónLicencias)   --------------------------------
 
         // Mostrar el formulario
         [HttpGet]
@@ -96,7 +99,7 @@ namespace Archiva.Controllers
             }
         }
 
-
+        // -------------------------   END   --------------------------------
     }
 }
 
