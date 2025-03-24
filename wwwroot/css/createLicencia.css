@@ -1,0 +1,15 @@
+﻿.bg-maroon {
+    background-color: #800000;
+    color: white;
+}
+
+.btn-maroon {
+    background-color: #800000;
+    color: white;
+    border: none;
+}
+
+    .btn-maroon:hover {
+        background-color: #990000;
+        color: white;
+    }

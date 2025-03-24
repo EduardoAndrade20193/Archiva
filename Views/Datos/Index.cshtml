@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Captura de Datos";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Captura de Datos</h2>
+
+    <form id="formularioDato" class="row g-3 mb-4">
+        <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required />
+        </div>
+        <div class="col-md-6">
+            <label for="valor" class="form-label">Valor</label>
+            <input type="number" class="form-control" id="valor" required />
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+    </form>
+
+    <h4>Tabla de Datos</h4>
+    <table id="tablaDatos" class="display table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h4 class="mt-5">Gráfica</h4>
+    <canvas id="graficoDatos" width="400" height="200"></canvas>
+</div>
+
+<script src="~/js/datos.js"></script>

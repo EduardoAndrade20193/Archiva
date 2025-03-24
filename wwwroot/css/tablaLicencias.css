@@ -1,0 +1,61 @@
+﻿/* Fondo general suave */
+body {
+    background-color: #f3f1f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card elegante */
+.card {
+    margin-top: 30px;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado guindo oscuro */
+.card-header {
+    background-color: #800020; /* Guindo clásico */
+    color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+/* Tabla con hover e interlineado */
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+/* Encabezado de la tabla */
+.table thead th {
+    background-color: #431616; /* Guindo más claro */
+    color: white;
+}
+
+/* Hover en filas */
+.table-hover tbody tr:hover {
+    background-color: #f9d9dc;
+}
+
+/* Opcional: Bordes más suaves */
+.table-bordered > :not(caption) > * > * {
+    border-width: 1px;
+}
+
+/* Botones de DataTable (si agregas exportar, paginación) */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #800020;
+    color: white !important;
+    border-radius: 0.25rem;
+    margin: 0 2px;
+    border: none;
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        background-color: #a00028;
+        color: white !important;
+        font-weight: bold;
+    }
