@@ -99,6 +99,46 @@ namespace Archiva.Controllers
             }
         }
 
+
+        // -------------------------   Inicio (Graficas Licencias)   --------------------------------
+
+
+
+        [HttpGet]
+        public JsonResult GetDatosGrafica(string fechaInicio, string fechaFin)
+        {
+            try
+            {
+                var datos = new Dictionary<string, int>();
+
+                using (var conn = _db.CrearConexion())
+                {
+                    conn.Open();
+                    using (var cmd = new MySqlCommand("SELECT Nivel, COUNT(*) AS Cantidad FROM LicenciasWeb WHERE STR_TO_DATE(Fecha, '%d/%m/%Y') BETWEEN @fechaInicio AND @fechaFin GROUP BY Nivel", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@fechaInicio", DateTime.Parse(fechaInicio).ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@fechaFin", DateTime.Parse(fechaFin).ToString("yyyy-MM-dd"));
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                datos[reader.GetString("Nivel")] = reader.GetInt32("Cantidad");
+                            }
+                        }
+                    }
+                }
+
+                return Json(new { success = true, data = new { labels = datos.Keys, valores = datos.Values } });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+
+
         // -------------------------   END   --------------------------------
     }
 }

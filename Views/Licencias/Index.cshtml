@@ -50,10 +50,53 @@
 
 
 
+
+
+
+@{
+    ViewData["Title"] = "Gráfica de Licencias";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-maroon text-white">
+            <h4>Gráfica de Licencias</h4>
+        </div>
+        <div class="card-body">
+            <form id="formFiltro">
+                <div class="row">
+                    <div class="col-md-5">
+                        <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+                        <input type="date" id="fechaInicio" class="form-control" required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="fechaFin" class="form-label">Fecha Fin</label>
+                        <input type="date" id="fechaFin" class="form-control" required>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-maroon w-100">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <canvas id="graficaLicencias"></canvas>
+        </div>
+    </div>
+</div>
+
+
+
 @section Estilos {
     <link rel="stylesheet" href="~/css/tablaLicencias.css" />
 }
 
 @section Scripts {
     <script src="~/js/tablaLicencias.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/graficasLicencias.js"></script>
+
 }
